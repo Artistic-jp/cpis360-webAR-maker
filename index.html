@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The First Assignment for CPIS-360</title>
+    <title>CPIS-360: Assignment 1 - Faisal</title>
     
-  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.8/aframe/build/aframe-ar-nft.js"></script>
-  </head> 
-   <style>
-    body { margin:0; overflow:hidden; }
+    <link rel="stylesheet" href="style.css">
 
-    #startButton {
-      position: absolute;
-      z-index: 9999;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 15px 25px;
-      font-size: 18px;
-      background: black;
-      color: white;
-      border: none;
-      border-radius: 10px;
-    }
-  </style>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 
 <body>
 
-<button id="startButton">Start AR</button>
+    <button id="startButton">Start AR Experience</button>
+
+    <div id="ui-overlay" style="display:none;">
+        <h1>Faisal's Geometry Scene</h1>
+        <p>Scan the Hiro Marker to see the magic</p>
+    </div>
 
 <a-scene
   id="scene"
@@ -60,7 +49,7 @@
 <!-- donut base layer -->
   <a-torus 
   position="0 0.5 0"
-  rotation="90 0 0"
+  rotation="0 360 0"
   radius="0.4"
   radius-tubular="0.12"
   material="color: #F39C12;" 
@@ -69,7 +58,7 @@
 
 <!-- Chocolate layer -->
 <a-torus
-  position="0 0.52 0" 
+  position="0 0.58 0" 
   rotation="0 360 0"
   radius="0.4"
   radius-tubular="0.06"
@@ -99,12 +88,17 @@
 </a-scene>
 
 <script>
-document.getElementById("startButton").addEventListener("click", function () {
-  const scene = document.getElementById("scene");
+        // Handle the Start Button for Safari/Chrome compatibility
+        document.getElementById("startButton").addEventListener("click", function () {
+            const scene = document.getElementById("scene");
+            const overlay = document.getElementById("ui-overlay");
 
-  scene.style.display = "block";
-  this.style.display = "none";
-
+            // Show AR elements
+            scene.style.display = "block";
+            overlay.style.display = "block";
+            
+            // Hide Start Button
+            this.style.display = "none";
   // Important for iOS
   window.dispatchEvent(new Event("resize"));
 });
