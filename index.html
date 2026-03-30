@@ -40,6 +40,7 @@
 
   <a-marker preset="hiro">
 
+    <!-- tect above geometric -->
     <a-text
       value="Faisal's Geometry Scene"
       position="0 2.0 0"
@@ -48,31 +49,34 @@
       width="5">
     </a-text>
 
+    <!-- Cube -->
     <a-box 
       position="-1 0.5 0" 
       width="0.5" height="0.5" depth="0.5" 
       material="color: #4CC3D9;" 
       animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear">
     </a-box>
-
-    <a-torus 
-  id="donut-base"
+    
+<!-- donut base layer -->
+  <a-torus 
   position="0 0.5 0"
   rotation="90 0 0"
   radius="0.4"
   radius-tubular="0.12"
   material="color: #F39C12;" 
-  animation="property: rotation; to: 90 360 0; loop: true; dur: 6000; easing: linear">
-  
-  <a-torus
-    position="0 0 0.02" 
-    radius="0.4"
-    radius-tubular="0.05"
-    material="color: #4B2C20;"
-    animation="property: rotation; to: 0 0 0; loop: true; dur: 6000">
-  </a-torus>
+  animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear">
 </a-torus>
 
+<!-- Chocolate layer -->
+<a-torus
+  position="0 0.52 0" 
+  rotation="0 360 0"
+  radius="0.4"
+  radius-tubular="0.06"
+  material="color: #4B2C20;">
+</a-torus>
+
+    <!-- Pyramid -->
     <a-cone 
       position="1 0.5 0" 
       radius-bottom="0.4" height="0.6" segments-radial="4"
@@ -80,6 +84,7 @@
       animation="property: rotation; to: 0 360 0; loop: true; dur: 7000; easing: linear">
     </a-cone>
 
+    <!-- carpet layer -->
     <a-plane 
       position="0 0.01 0" 
       rotation="-90 0 0" 
