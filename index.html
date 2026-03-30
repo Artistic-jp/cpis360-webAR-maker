@@ -48,21 +48,19 @@
     
 <!-- donut base layer -->
   <a-torus 
-  position="0 0.5 0"
-  rotation="180 0 0"
-  radius="0.4"
-  radius-tubular="0.12"
-  material="color: #F39C12;" 
-  animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear">
-</a-torus>
-
-<!-- Chocolate layer -->
-<a-torus
-  position="0 0.7 0" 
-  rotation="180 0 0"
-  radius="0.4"
-  radius-tubular="0.06"
-  material="color: #4B2C20;">
+    id="donut-base"
+    position="0 0.6 0"
+    rotation="90 0 0"  radius="0.4"
+    radius-tubular="0.12"
+    material="color: #F39C12;" 
+    animation="property: rotation; from: 90 0 0; to: 90 360 0; loop: true; dur: 6000; easing: linear">
+    
+    <a-torus
+        position="0 0.57 0.05" 
+        radius="0.41"
+        radius-tubular="0.06"
+        material="color: #4B2C20;">
+    </a-torus>
 </a-torus>
 
     <!-- Pyramid -->
