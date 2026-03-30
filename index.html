@@ -52,23 +52,32 @@
       position="-1 0.5 0" 
       width="0.5" height="0.5" depth="0.5" 
       material="color: #4CC3D9;" 
-      animation="property: rotation; to: 0 360 360; loop: true; dur: 8000; easing: linear">
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear">
     </a-box>
 
     <a-torus 
-      position="0 0.5 0"
-      rotation="90 0 0"
-      radius="0.4"
-      radius-tubular="0.1"
-      material="color: #F39C12;"
-      animation="property: rotation; to: 90 360 0; loop: true; dur: 6000; easing: linear">
-    </a-torus>
+  id="donut-base"
+  position="0 0.5 0"
+  rotation="90 0 0"
+  radius="0.4"
+  radius-tubular="0.12"
+  material="color: #F39C12;" 
+  animation="property: rotation; to: 90 360 0; loop: true; dur: 6000; easing: linear">
+  
+  <a-torus
+    position="0 0 0.02" 
+    radius="0.4"
+    radius-tubular="0.05"
+    material="color: #4B2C20;"
+    animation="property: rotation; to: 0 0 0; loop: true; dur: 6000">
+  </a-torus>
+</a-torus>
 
     <a-cone 
       position="1 0.5 0" 
       radius-bottom="0.4" height="0.6" segments-radial="4"
       material="color: #FF5733;"
-      animation="property: rotation; to: 0 -360 0; loop: true; dur: 7000; easing: linear">
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 7000; easing: linear">
     </a-cone>
 
     <a-plane 
@@ -76,7 +85,7 @@
       rotation="-90 0 0" 
       width="3" 
       height="1.5" 
-      material="color: #7B1FA2; opacity: 0.8; transparent: true;">
+      material="color: #FFE8E3; opacity: 0.8; transparent: true;">
     </a-plane>
 
   </a-marker>
